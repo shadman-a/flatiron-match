@@ -1,7 +1,7 @@
 class CreateCards < ActiveRecord::Migration[6.0]
   def change
     create_table :cards do |t|
-      t.belongs_to :deck, null: false, foreign_key: true
+      t.integer :deck_id
       t.string :cardside
 
       t.timestamps

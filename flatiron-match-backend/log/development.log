@@ -1,0 +1,244 @@
+  [1m[35m (681.4ms)[0m  [1m[35mCREATE DATABASE "flatiron_match_backend_development" ENCODING = 'unicode'[0m
+  [1m[35m (268.5ms)[0m  [1m[35mCREATE DATABASE "flatiron_match_backend_test" ENCODING = 'unicode'[0m
+  [1m[35m (95.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1006458041753529435)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200727172034)
+  [1m[35m (25.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (142.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (147.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200727172034"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGames (20200727192136)
+  [1m[35m (19.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "user_id" bigint NOT NULL, "deck_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_de9e6ea7f7"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_558f519620"
+FOREIGN KEY ("deck_id")
+  REFERENCES "decks" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (25.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1006458041753529435)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1006458041753529435)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20200727192136)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "user_id" bigint NOT NULL, "deck_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_de9e6ea7f7"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_558f519620"
+FOREIGN KEY ("deck_id")
+  REFERENCES "decks" ("id")
+)[0m
+  [1m[35m (25.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1006458041753529435)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1006458041753529435)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20200727192136)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (38.3ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "user_id" bigint NOT NULL, "deck_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_de9e6ea7f7"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_558f519620"
+FOREIGN KEY ("deck_id")
+  REFERENCES "decks" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1006458041753529435)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1006458041753529435)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20200727192136)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1006458041753529435)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1006458041753529435)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateGames (20200727192136)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (39.1ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "user_id" integer, "deck_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200727192136"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateDecks (20200727192248)
+  [1m[35m (13.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "decks" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (21.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200727192248"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCards (20200727192507)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (49.2ms)[0m  [1m[35mCREATE TABLE "cards" ("id" bigserial primary key, "deck_id" integer, "cardside" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200727192507"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-27 19:56:13.173941"], ["updated_at", "2020-07-27 19:56:13.173941"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1006458041753529435)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (23.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (8.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (1.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (21.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (25.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.7ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Create (2.9ms)[0m  [1m[32mINSERT INTO "decks" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "flatiron"], ["created_at", "2020-07-27 20:06:42.537781"], ["updated_at", "2020-07-27 20:06:42.537781"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Create (0.9ms)[0m  [1m[32mINSERT INTO "decks" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "flatiron"], ["created_at", "2020-07-27 20:07:39.338703"], ["updated_at", "2020-07-27 20:07:39.338703"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (20.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "michael"], ["created_at", "2020-07-27 20:07:39.357795"], ["updated_at", "2020-07-27 20:07:39.357795"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (1.9ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["deck_id", 2], ["created_at", "2020-07-27 20:07:39.481808"], ["updated_at", "2020-07-27 20:07:39.481808"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["deck_id", 1], ["created_at", "2020-07-27 20:07:39.497159"], ["updated_at", "2020-07-27 20:07:39.497159"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mDeck Load (25.8ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.5ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["deck_id", 2], ["created_at", "2020-07-27 20:07:39.537274"], ["updated_at", "2020-07-27 20:07:39.537274"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["deck_id", 2], ["created_at", "2020-07-27 20:07:39.550535"], ["updated_at", "2020-07-27 20:07:39.550535"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (25.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDeck Load (0.4ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "deck_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["deck_id", 1], ["created_at", "2020-07-27 20:07:39.591289"], ["updated_at", "2020-07-27 20:07:39.591289"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (1.6ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-UL8B585HP-14e7e4df1c70-512"], ["created_at", "2020-07-27 20:07:39.640608"], ["updated_at", "2020-07-27 20:07:39.640608"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (0.5ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-U91CXSUN4-3bac0a7f6a08-512"], ["created_at", "2020-07-27 20:07:39.651074"], ["updated_at", "2020-07-27 20:07:39.651074"]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.6ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-U8H2RA3C1-643c8ce562ef-512"], ["created_at", "2020-07-27 20:07:39.688000"], ["updated_at", "2020-07-27 20:07:39.688000"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-UMC62QVAM-019eb6bf04b1-512"], ["created_at", "2020-07-27 20:07:39.695938"], ["updated_at", "2020-07-27 20:07:39.695938"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (24.9ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-U7PSME4DA-8b811931b3d9-512"], ["created_at", "2020-07-27 20:07:39.703816"], ["updated_at", "2020-07-27 20:07:39.703816"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.3ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (0.3ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-ULYFYNXUN-920567a4beb2-512"], ["created_at", "2020-07-27 20:07:39.740111"], ["updated_at", "2020-07-27 20:07:39.740111"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (0.4ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-UHE4WR324-46298770f176-512"], ["created_at", "2020-07-27 20:07:39.748526"], ["updated_at", "2020-07-27 20:07:39.748526"]]
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDeck Load (0.2ms)[0m  [1m[34mSELECT "decks".* FROM "decks" WHERE "decks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCard Create (1.0ms)[0m  [1m[32mINSERT INTO "cards" ("deck_id", "cardside", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["deck_id", 1], ["cardside", "https://ca.slack-edge.com/T02MD9XTF-ULEG985FD-2be336876c36-512"], ["created_at", "2020-07-27 20:07:39.790175"], ["updated_at", "2020-07-27 20:07:39.790175"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-07-27 16:07:58 -0400
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brandongubitosa/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brandongubitosa/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 56.3ms | Allocations: 409)
+Completed 200 OK in 98ms (Views: 74.7ms | ActiveRecord: 0.0ms | Allocations: 2255)
+
+
+Started GET "/cards" for ::1 at 2020-07-27 16:08:11 -0400
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for CardsController):
+  
+actionpack (6.0.3.2) lib/abstract_controller/base.rb:131:in `process'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.2) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.2) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+activerecord (6.0.3.2) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-07-27 16:08:20 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (78.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 305ms (Views: 16.5ms | ActiveRecord: 269.0ms | Allocations: 4573)
+
+
+Started GET "/cards" for ::1 at 2020-07-27 16:10:21 -0400
+Processing by CardsController#index as HTML
+  [1m[36mCard Load (21.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 124ms (Views: 37.8ms | ActiveRecord: 71.8ms | Allocations: 5205)
+
+
+Started GET "/decks" for ::1 at 2020-07-27 16:11:07 -0400
+Processing by DecksController#index as HTML
+  [1m[36mDeck Load (6.4ms)[0m  [1m[34mSELECT "decks".* FROM "decks"[0m
+  ↳ app/controllers/decks_controller.rb:5:in `index'
+Completed 200 OK in 163ms (Views: 66.9ms | ActiveRecord: 53.5ms | Allocations: 4425)
+
+
+Started GET "/games" for ::1 at 2020-07-27 16:12:21 -0400
+Processing by GamesController#index as HTML
+  [1m[36mGame Load (2.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/games_controller.rb:5:in `index'
+Completed 200 OK in 220ms (Views: 133.4ms | ActiveRecord: 55.5ms | Allocations: 4709)
+
+
