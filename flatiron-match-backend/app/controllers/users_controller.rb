@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     def index
         users = User.all
 
-        render json:users 
+        render json: users 
     end
 
     def show
@@ -11,17 +11,17 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.new(user_params)
+        user = User.create!(user_params)
 
-        render json:users 
+        render json: user 
     end
 
     def update
         user = User.find(params[:id])
 
-        user.update(user_params)
+        user.update!(user_params)
 
-        render json:users 
+        render json: user
     end
 
     def edit
@@ -29,10 +29,11 @@ class UsersController < ApplicationController
     end
 
     def destroy
-        user = User.find
+        user = User.find(params[:id])
 
-        user.destroy 
-        render
+        user.destroy!
+
+        render json: {}
     end
 
     private
