@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", () => {
         this.classList.toggle('flip');
     }
 
+/// we need to store the image to a div
+
+
+
+
+
     cards.forEach(card => card.addEventListener('click', flipCard));
     
     fetchCards()
