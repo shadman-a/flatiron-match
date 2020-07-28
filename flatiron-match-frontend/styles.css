@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+header {
+  text-align: center;
+}
+
 body {
   height: 100vh;
   display: flex;
