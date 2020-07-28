@@ -5,18 +5,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function fetchCards() {
         fetch(url)
         .then(resp => resp.json())
-        .then(cards => cards.forEach(card => 
-            renderCards(card)))
+        .then(data => data.forEach(cards => 
+            renderCards(cards)))
     }
 
-  function renderCards(card) {
+  function renderCards(cards) {
     const frontFace = document.getElementById('memory-game')
-    const div = document.createElement('class')
+    const div = document.createElement('div')
     div.className = 'memory-card'
-    div.id = card.id
+    div.id = cards.id
     div.innerHTML = `      
-        <img class="front-face" src=${card.cardside}>
-        <img class="back-face" src="https://cdn.bootcamprankings.com/spai/w_210+q_lossy+ret_img+to_webp/https://bootcamprankings.com/wp-content/uploads/2019/10/36776548_1553913434714928_4773274533622710272_n.png" alt="Memory Card">
+        <img class="front-face" src=${cards.cardside}>
+        <img class="back-face" src="https://cdn.bootcamprankings.com/spai/w_210+q_lossy+ret_img+to_webp/https://bootcamprankings.com/wp-content/uploads/2019/10/36776548_1553913434714928_4773274533622710272_n.png">
     `
     frontFace.append(div)
     }   
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (firstCard.id === secondCard.id) {
             disableCards();
         return;
-    }
+        }
 
-    unflipCards();
+        unflipCards();
     }
 
     function disableCards() {
@@ -57,15 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
         resetBoard();
     }
 
-    
-
     function unflipCards() {
         lockBoard = true;
-    setTimeout(() => {
-        firstCard.classList.remove('flip');
-        secondCard.classList.remove('flip');
-        resetBoard();
-    }, 1500);
+        setTimeout(() => {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+            resetBoard();
+        }, 1500);
     }
                 
     function resetBoard() {
@@ -83,14 +81,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })();
 
 
+    fetchCards()
 
     //listners
-    document.addEventListener('click', function(e) {
-        if(e.target.className = ('memory-card')){
-        flipCard(e.target)
-        }
-    })
-
-
-    fetchCards()
+        document.body.addEventListener('click', function(e) {
+            if(e.target.className = 'memory-card'){
+            flipCard(e.target)
+            console.log(e.target)
+            }
+        })
+    
 })   
