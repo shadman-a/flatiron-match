@@ -17,18 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
     div.innerHTML = `      
     <img class="front-face" id= ${card.id} src=${card.cardside}>
     <img class="back-face" src="https://cdn.bootcamprankings.com/spai/w_210+q_lossy+ret_img+to_webp/https://bootcamprankings.com/wp-content/uploads/2019/10/36776548_1553913434714928_4773274533622710272_n.png" alt="Memory Card">
-`
+    `
     frontFace.append(div)
-  }
+    }
 
 
     function flipCard(card) {
-        //toggleClass('flip');
-        //console.log(card.className)
-       
+        card.toggle('flip');     
     }
 
-    //console.log(memoryCard)
+    document.addEventListener('click', function(e) {
+        if(e.target.className = ('memory-card')){
+        flipCard(e.target.classList)
+        }
+    })
 
     document.addEventListener('click', function(e) {
         if(e.target.innerText = ('memory-card'))
