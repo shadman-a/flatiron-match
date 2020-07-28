@@ -43,7 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function checkForMatch() {
-        if (firstCard.id === secondCard.id) {
+        console.log(firstCard.children[0].src)
+        if (firstCard.children[0].src  === secondCard.children[0].src) {
             disableCards();
         return;
         }
@@ -87,7 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('click', function(e) {
             if(e.target.className === 'back-face'){
             flipCard(e.target.parentElement)
-            console.log(e.target.parentElement)
             }
         })
     
