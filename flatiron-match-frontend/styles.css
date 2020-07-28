@@ -14,7 +14,7 @@ body {
   background:white;
 }
 
-.memory-game {
+#memory-game {
   width: 640px;
   height: 640px;
   margin: auto;
