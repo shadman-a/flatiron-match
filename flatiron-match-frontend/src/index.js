@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchCards()
 
     //listners
-        document.body.addEventListener('click', function(e) {
-            if(e.target.className = 'memory-card'){
-            flipCard(e.target)
-            console.log(e.target)
+        document.addEventListener('click', function(e) {
+            if(e.target.className === 'back-face'){
+            flipCard(e.target.parentElement)
+            console.log(e.target.parentElement)
             }
         })
     
