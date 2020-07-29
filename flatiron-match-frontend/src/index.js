@@ -98,27 +98,93 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         const form = document.getElementById('form')
+        //console.log(form)
         const userurl = "http://localhost:3000/users"
+        const ul = document.querySelector('.user')
         
-        form.addEventListener('submit', function(e) {
+        //user evernt listener to post
+        
+        document.addEventListener('submit', function(e) {
+            //console.log(e.target)
+            //console.log(form)
             e.preventDefault();
             let username = form.username.value
             postUser(username);
+
+        })
+
+        //post user
+
+        function postUser(username) {
+            fetch(userurl, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            
+            body: JSON.stringify({"name": username})
+        })
+            .then(resp =>resp.json())
+            .then(data => ul.innerHTML = `${data.name}
+            <button type="button">Edit</button>
+            <button type="button">Delete</button>`
+            )
+           
+}
+    //edit user for Form
+
+        const edit = document.querySelector('button')
+        
+
+        document.addEventListener('click', function(e) {
+            //console.log(e.target)
+            //console.log(edit)
+            //e.preventDefault();
+            let username = edit.parentElement.value
+            console.log(username)
+            //console.log(username)
+            patchUser(username, id)
         })
             
-            
-            function postUser(username) {
-                fetch(userurl, {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    "accept": "application/json"
-                },
-                
-                body: JSON.stringify({"name": username})
+      
+    })
+
+        //edit patch 
+    function patchUser(username, id) {
+        fetch(`userurl/${id}`, {
+        method: "PATCH",
+        headers: {
+            "content-type": "application/json",
+            "accept": "application/json"
+        },
+        
+        body: JSON.stringify({name: username})
+    })
+        .then(resp =>resp.json())
+        .then(data => ul.innerHTML = data.name)
+           
+}
+
+//make delete event listener
+
+    document.addEventListener('click', function(e) {
+    //console.log(e.target)
+    //console.log(edit)
+    //e.preventDefault();
+        let username = edit.parentElement.value
+        console.log(username)
+        //console.log(username)
+        deleteUser(username, id)
+    })
+
+
+            function deleteUser(username, id) {
+                fetch( `userurl/${id}`, {
+                method: "DELETE",
             })
-                .then(resp =>resp.json())
-                .then(data => console.log(data))
-    }
-    
-})   
+                ul.remove() 
+       
+}
+
+      
