@@ -1,6 +1,13 @@
+const url = "http://localhost:3000/cards"
+const userurl = "http://localhost:3000/users"
+let form 
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    const url = "http://localhost:3000/cards"
-    
+
+    form = document.getElementById('form')
+
 
     function fetchCards() {
         fetch(url)
@@ -8,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
         //.then(data => shuffle(data))
         .then(data => data.forEach(cards =>
             renderCards(cards)))
-           
+
     }
 
-  function renderCards(cards) {
+    function renderCards(cards) {
     const frontFace = document.getElementById('memory-game')
     const div = document.createElement('div')
     div.className = 'memory-card'
@@ -32,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (card === firstCard) return;
         card.classList.add('flip');
     
-        
         if (!hasFlippedCard) {
             hasFlippedCard = true;
             firstCard = card;
@@ -80,10 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
         memoryCard.forEach(card => {
             document.getElementById('memory-game').style.order
           let ramdomPos = Math.floor(Math.random() * 16);
-          card.style.order = ramdomPos;
-          
+        card.style.order = ramdomPos;
+        
         });
-      })();
+    })();
 
 
 
@@ -94,13 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('click', function(e) {
             if(e.target.className === 'back-face'){
             flipCard(e.target.parentElement)
+            } else if (e.target === document.querySelector('button')){
+            let id = e.target.id
+            console.log(id)
+            deleteUser(id)
             }
         })
 
-        const form = document.getElementById('form')
-        //console.log(form)
-        const userurl = "http://localhost:3000/users"
-        const ul = document.querySelector('.user')
         
         //user evernt listener to post
         
@@ -110,12 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             let username = form.username.value
             postUser(username);
-
+            form.reset()
         })
 
         //post user
 
         function postUser(username) {
+            const ul = document.querySelector('.user')
             fetch(userurl, {
             method: "POST",
             headers: {
@@ -127,64 +134,63 @@ document.addEventListener("DOMContentLoaded", () => {
         })
             .then(resp =>resp.json())
             .then(data => ul.innerHTML = `${data.name}
-            <button type="button">Edit</button>
-            <button type="button">Delete</button>`
+            <button id='${data.id}' type="button">Delete</button>`
             )
-           
-}
+        
+        }
     //edit user for Form
 
-        const edit = document.querySelector('button')
+        
         
 
-        document.addEventListener('click', function(e) {
-            //console.log(e.target)
-            //console.log(edit)
-            //e.preventDefault();
-            let username = edit.parentElement.value
-            console.log(username)
-            //console.log(username)
-            patchUser(username, id)
-        })
+        // document.addEventListener('click', function(e) {
             
-      
-    })
+        //     // let username = edit.parentElement.value
+        //     // console.log(username)
+        //     //console.log(username)
+        //     // patchUser(username, id)
+        // })
+            
+    
+
 
         //edit patch 
-    function patchUser(username, id) {
-        fetch(`userurl/${id}`, {
-        method: "PATCH",
-        headers: {
-            "content-type": "application/json",
-            "accept": "application/json"
-        },
+    //     function patchUser(username, id) {
+    //     fetch(`${userurl}/${id}`, {
+    //     method: "PATCH",
+    //     headers: {
+    //         "content-type": "application/json",
+    //         "accept": "application/json"
+    //     },
         
-        body: JSON.stringify({name: username})
-    })
-        .then(resp =>resp.json())
-        .then(data => ul.innerHTML = data.name)
-           
-}
+    //     body: JSON.stringify({name: username})
+    // })
+    //     .then(resp =>resp.json())
+    //     .then(data => updateUser(data))
+    // }
+    //     function updateUser(data){
+    //         const ul = document.querySelector('.user').value
+    //         ul.innerText = data.name
+    //     }
 
 //make delete event listener
 
-    document.addEventListener('click', function(e) {
-    //console.log(e.target)
-    //console.log(edit)
-    //e.preventDefault();
-        let username = edit.parentElement.value
-        console.log(username)
-        //console.log(username)
-        deleteUser(username, id)
-    })
+    // document.addEventListener('click', function(e) {
+    // //console.log(e.target)
+    // //console.log(edit)
+    // //e.preventDefault();
+    //     // let username = edit.parentElement.value
+    //     console.log(username)
+    //     //console.log(username)
+    //     deleteUser(username, id)
+    // })
 
-
-            function deleteUser(username, id) {
-                fetch( `userurl/${id}`, {
+    const ul = document.querySelector('.user')
+            function deleteUser(id) {
+                fetch( `${userurl}/${id}`, {
                 method: "DELETE",
             })
                 ul.remove() 
-       
 }
 
-      
+})
