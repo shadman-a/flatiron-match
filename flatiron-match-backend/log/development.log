@@ -2922,3 +2922,352 @@ Processing by CardsController#index as */*
 Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2449)
 
 
+Started GET "/cards" for ::1 at 2020-07-29 09:59:44 -0400
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CardsController#index as */*
+  [1m[36mCard Load (5.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 41ms (Views: 18.2ms | ActiveRecord: 13.1ms | Allocations: 6438)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:01:17 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.6ms | Allocations: 2467)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:02:58 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (6.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 6.7ms | Allocations: 2467)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:05:01 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (28.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 38ms (Views: 8.7ms | ActiveRecord: 28.9ms | Allocations: 2467)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:05:08 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (28.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 71ms (Views: 43.1ms | ActiveRecord: 28.0ms | Allocations: 2468)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:05:29 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.8ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:05:58 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (16.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 24ms (Views: 7.7ms | ActiveRecord: 16.1ms | Allocations: 2450)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:07:27 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:08:11 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (25.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 9.3ms | ActiveRecord: 25.7ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:08:42 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 2.2ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:08:47 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (3.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 3.4ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:14:12 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (16.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 58ms (Views: 37.4ms | ActiveRecord: 16.5ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:15:33 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 1.0ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:16:53 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.9ms | Allocations: 2450)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:20:22 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (2.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 2.4ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:22:09 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.5ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:22:43 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.8ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:23:03 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (54.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 72ms (Views: 17.4ms | ActiveRecord: 54.4ms | Allocations: 2450)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:25:07 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 1.2ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:28:57 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (25.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 61ms (Views: 31.8ms | ActiveRecord: 25.7ms | Allocations: 2450)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:29:04 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (2.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 2.1ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:29:05 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (10.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 13.5ms | ActiveRecord: 10.8ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:29:06 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (1.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 1.9ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:29:06 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (1.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 1.9ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:29:27 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (1.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 1.2ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:33:53 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (3.0ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 3.0ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:37:50 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (25.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 36ms (Views: 10.5ms | ActiveRecord: 25.1ms | Allocations: 2450)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:38:39 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (4.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 4.7ms | Allocations: 2449)
+
+
+Started GET "/" for ::1 at 2020-07-29 10:41:03 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brandongubitosa/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brandongubitosa/.rvm/gems/ruby-2.7.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 15.4ms | Allocations: 295)
+Completed 200 OK in 30ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 1532)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-07-29 10:41:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2020-07-29 10:41:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2020-07-29 10:41:08 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (36.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 103ms (Views: 10.6ms | ActiveRecord: 76.6ms | Allocations: 4184)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:44:59 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (6.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 60ms (Views: 44.6ms | ActiveRecord: 6.4ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:45:51 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (11.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 25ms (Views: 13.1ms | ActiveRecord: 11.2ms | Allocations: 2450)
+
+
+Started GET "/users" for ::1 at 2020-07-29 10:46:09 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 2.1ms | Allocations: 999)
+
+
+Started GET "/users" for ::1 at 2020-07-29 10:46:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (26.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 32ms (Views: 5.0ms | ActiveRecord: 26.6ms | Allocations: 999)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:47:02 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (8.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 26ms (Views: 16.9ms | ActiveRecord: 8.7ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:47:08 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.9ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.9ms | Allocations: 2450)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:47:43 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (48.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 58ms (Views: 9.2ms | ActiveRecord: 48.6ms | Allocations: 2449)
+
+
+Started GET "/users" for ::1 at 2020-07-29 10:47:46 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 999)
+
+
+Started GET "/users" for ::1 at 2020-07-29 10:47:49 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 7.7ms | Allocations: 999)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:50:44 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (11.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 21ms (Views: 9.2ms | ActiveRecord: 11.8ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-29 10:51:22 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (115.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 124ms (Views: 8.6ms | ActiveRecord: 115.1ms | Allocations: 2449)
+
+
+Started GET "/users" for ::1 at 2020-07-29 10:51:32 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (62.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:6:in `index'
+Completed 200 OK in 67ms (Views: 4.6ms | ActiveRecord: 62.2ms | Allocations: 1001)
+
+

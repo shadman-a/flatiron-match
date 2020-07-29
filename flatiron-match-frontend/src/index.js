@@ -5,8 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     function fetchCards() {
         fetch(url)
         .then(resp => resp.json())
-        .then(data => data.forEach(cards => 
+        //.then(data => shuffle(data))
+        .then(data => data.forEach(cards =>
             renderCards(cards)))
+           
     }
 
   function renderCards(cards) {
@@ -15,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     div.className = 'memory-card'
     div.id = cards.id
     div.innerHTML = `      
-        <img class="front-face" src=${cards.cardside}>
+        <img class="front-face" src=${cards.cardside}> 
         <img class="back-face" src="https://cdn.bootcamprankings.com/spai/w_210+q_lossy+ret_img+to_webp/https://bootcamprankings.com/wp-content/uploads/2019/10/36776548_1553913434714928_4773274533622710272_n.png">
     `
     frontFace.append(div)
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function checkForMatch() {
-        console.log(firstCard.children[0].src)
+        //console.log(firstCard.children[0].src)
         if (firstCard.children[0].src  === secondCard.children[0].src) {
             disableCards();
         return;
@@ -76,10 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     (function shuffle() {
         memoryCard.forEach(card => {
+            document.getElementById('memory-game').style.order
           let ramdomPos = Math.floor(Math.random() * 16);
           card.style.order = ramdomPos;
+          
         });
       })();
+
+
 
 
     fetchCards()
@@ -90,5 +96,29 @@ document.addEventListener("DOMContentLoaded", () => {
             flipCard(e.target.parentElement)
             }
         })
+
+        const form = document.getElementById('form')
+        const userurl = "http://localhost:3000/users"
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let username = form.username.value
+            postUser(username);
+        })
+            
+            
+            function postUser(username) {
+                fetch(userurl, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json",
+                    "accept": "application/json"
+                },
+                
+                body: JSON.stringify({"name": username})
+            })
+                .then(resp =>resp.json())
+                .then(data => console.log(data))
+    }
     
 })   
