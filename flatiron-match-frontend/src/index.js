@@ -4,6 +4,8 @@ const commenturl = "http://localhost:3000/comments"
 const form = document.getElementById('form')
 const commentForm = document.getElementById('comment-form')
 
+const userComment = document.getElementById('user-comment')
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -69,14 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
             resetBoard();
         }, 1500);
     }
-                
+    //need to fix          
     function resetBoard() {
         [hasFlippedCard, lockBoard] = [false, false];
         [firstCard, secondCard] = [null, null];
     }
 
     const memoryCard = document.querySelectorAll('.memory-card');
-
+    //need to fix
     (function shuffle() {
         memoryCard.forEach(card => {
             document.getElementById('memory-game').style.order
@@ -119,8 +121,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function postComment(comment, userId) {
-        
-        
+        fetch(commenturl, {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            
+            body: JSON.stringify({
+               "text": comment,
+               "user_id": userId
+            })
+        })
+        .then(resp =>resp.json())
+        .then(comment => renderComment(comment))
+    }
+
+    function renderComment(comment) {
+        const commentCard = document.createElement('ul')
+        ul.className = 'commentCard'
+        ul.id = comment.id
+        ul.innerText = comment.text
+        userComment.append(ul)
     }
 
 //listeners
