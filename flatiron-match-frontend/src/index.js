@@ -105,19 +105,21 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => renderUser(data))
     }
 
-    function renderUser(data) {
-        const ul = document.querySelector('.user')
-        ul.id = data.id
-        ul.innerHTML = `${data.name}
-        <button id="delBtn type="button">Delete</button>`
-    }
-    
+    const ul = document.getElementById('user')
+    const userUl = document.createElement('ul')
 
-    const ul = document.querySelector('.user')
+    function renderUser(data) {
+        const userUl = document.createElement('ul')
+        userUl.id = data.id
+        userUl.innerHTML = `${data.name}
+        <button class="delBtn" type="button">Delete</button>`
+        ul.append(userUl)
+    }
+
     
     function deleteUser(id) {
         fetch(`${userurl}/${id}`, {method: "DELETE"})
-        ul.remove() 
+        userUl.remove() 
     }
 
     function postComment(comment, userId) {
@@ -137,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(comment => renderComment(comment))
     }
 
+
     function renderComment(comment) {
         const commentCard = document.createElement('ul')
         ul.className = 'commentCard'
@@ -144,6 +147,11 @@ document.addEventListener("DOMContentLoaded", () => {
         ul.innerHTML = `${comment.text} 
         <button id="delComBtn type="button">Delete</button>`
         userComment.append(ul)
+    }
+
+    function deleteComment(id) {
+        fetch(`${commenturl}/${id}`, {method: "DELETE"})
+        ul.remove() 
     }
 
 //listeners
@@ -165,8 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', function(e) {
         if(e.target.className === 'back-face'){
         flipCard(e.target.parentElement)
-        } else if (e.target === document.querySelector('button')){
-        let id = e.target.parentElement.parentElement.children[0].id
+        } else if (e.target.className === 'delBtn'){
+        let id = e.target.parentElement.id
         deleteUser(id)
         }
     })
