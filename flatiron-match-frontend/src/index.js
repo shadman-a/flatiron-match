@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function postComment(text, userId) {
-        console.log(text)
+        //console.log(text)
         fetch(commenturl, {
             method: "POST",
             headers: {
@@ -153,7 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function deleteComment(id) {
         fetch(`${commenturl}/${id}`, {method: "DELETE"})
-        ul.remove() 
+        const commentCard = document.getElementById(id)
+        commentCard.remove() 
     }
 
 //listeners
