@@ -141,7 +141,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const commentCard = document.createElement('ul')
         ul.className = 'commentCard'
         ul.id = comment.id
-        ul.innerText = comment.text
+        ul.innerHTML = `${comment.text} 
+        <button id="delComBtn type="button">Delete</button>`
         userComment.append(ul)
     }
 

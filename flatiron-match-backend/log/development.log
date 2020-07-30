@@ -7028,3 +7028,271 @@ Processing by UsersController#create as JSON
 Completed 200 OK in 56ms (Views: 0.9ms | ActiveRecord: 47.0ms | Allocations: 2492)
 
 
+Started GET "/cards" for ::1 at 2020-07-30 14:17:07 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (4.3ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 4.3ms | Allocations: 2449)
+
+
+Started POST "/users" for ::1 at 2020-07-30 14:17:11 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Brandon", "user"=>{"name"=>"Brandon"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Brandon"], ["created_at", "2020-07-30 18:17:11.359001"], ["updated_at", "2020-07-30 18:17:11.359001"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 12ms (Views: 1.1ms | ActiveRecord: 2.3ms | Allocations: 2492)
+
+
+Started POST "/comments" for ::1 at 2020-07-30 14:17:19 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"we are great", "user_id"=>"54", "comment"=>{"user_id"=>"54", "text"=>"we are great"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 54], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 54], ["text", "we are great"], ["created_at", "2020-07-30 18:17:19.667776"], ["updated_at", "2020-07-30 18:17:19.667776"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (26.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 27.8ms | Allocations: 3720)
+
+
+Started DELETE "/users/5" for ::1 at 2020-07-30 14:17:28 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `destroy'
+  [1m[35m (4.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+  [1m[36mUser Destroy (0.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+Completed 200 OK in 54ms (Views: 0.2ms | ActiveRecord: 33.4ms | Allocations: 2601)
+
+
+Started POST "/users" for ::1 at 2020-07-30 14:17:40 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Brandon", "user"=>{"name"=>"Brandon"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Brandon"], ["created_at", "2020-07-30 18:17:40.605533"], ["updated_at", "2020-07-30 18:17:40.605533"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 4.6ms | Allocations: 2492)
+
+
+Started GET "/cards" for ::1 at 2020-07-30 14:17:44 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (36.7ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 72ms (Views: 34.4ms | ActiveRecord: 36.7ms | Allocations: 2449)
+
+
+Started POST "/users" for ::1 at 2020-07-30 14:17:50 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Brandon", "user"=>{"name"=>"Brandon"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Brandon"], ["created_at", "2020-07-30 18:17:50.953018"], ["updated_at", "2020-07-30 18:17:50.953018"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 2.9ms | Allocations: 2493)
+
+
+Started POST "/comments" for ::1 at 2020-07-30 14:17:52 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"the enemy", "user_id"=>"56", "comment"=>{"user_id"=>"56", "text"=>"the enemy"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 56], ["text", "the enemy"], ["created_at", "2020-07-30 18:17:52.368033"], ["updated_at", "2020-07-30 18:17:52.368033"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 35ms (Views: 0.7ms | ActiveRecord: 2.6ms | Allocations: 3721)
+
+
+Started DELETE "/users/6" for ::1 at 2020-07-30 14:17:54 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `destroy'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+  [1m[36mUser Destroy (1.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 3.7ms | Allocations: 2465)
+
+
+Started POST "/users" for ::1 at 2020-07-30 14:18:33 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Shadman", "user"=>{"name"=>"Shadman"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Shadman"], ["created_at", "2020-07-30 18:18:33.853579"], ["updated_at", "2020-07-30 18:18:33.853579"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 11ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 2495)
+
+
+Started GET "/cards" for ::1 at 2020-07-30 14:18:38 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (2.2ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 2.2ms | Allocations: 2450)
+
+
+Started POST "/users" for ::1 at 2020-07-30 14:18:44 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Shadman", "user"=>{"name"=>"Shadman"}}
+  [1m[35m (5.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Shadman"], ["created_at", "2020-07-30 18:18:44.058919"], ["updated_at", "2020-07-30 18:18:44.058919"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 7.8ms | Allocations: 2492)
+
+
+Started POST "/comments" for ::1 at 2020-07-30 14:18:48 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"safdas", "user_id"=>"58", "comment"=>{"user_id"=>"58", "text"=>"safdas"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (2.5ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "text", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 58], ["text", "safdas"], ["created_at", "2020-07-30 18:18:48.761280"], ["updated_at", "2020-07-30 18:18:48.761280"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 4.4ms | Allocations: 3719)
+
+
+Started DELETE "/users/7" for ::1 at 2020-07-30 14:19:01 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `destroy'
+  [1m[35m (26.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+  [1m[36mUser Destroy (2.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:22:in `destroy'
+Completed 200 OK in 44ms (Views: 0.2ms | ActiveRecord: 34.0ms | Allocations: 2465)
+
+
+Started GET "/cards" for ::1 at 2020-07-30 14:19:04 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.4ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.4ms | Allocations: 2449)
+
+
+Started POST "/comments" for ::1 at 2020-07-30 14:19:07 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"asdf", "user_id"=>"", "comment"=>{"user_id"=>"", "text"=>"asdf"}}
+Completed 422 Unprocessable Entity in 4ms (ActiveRecord: 0.0ms | Allocations: 718)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/comments_controller.rb:14:in `create'
+Started DELETE "/users/undefined" for ::1 at 2020-07-30 14:19:08 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms | Allocations: 624)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/users_controller.rb:20:in `destroy'
+Started GET "/cards" for ::1 at 2020-07-30 14:19:12 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (23.6ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 35ms (Views: 10.7ms | ActiveRecord: 23.6ms | Allocations: 2448)
+
+
+Started GET "/cards" for ::1 at 2020-07-30 14:19:15 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (1.8ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 1.8ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-30 14:19:15 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (5.1ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 5.1ms | Allocations: 2449)
+
+
+Started GET "/cards" for ::1 at 2020-07-30 14:19:15 -0400
+Processing by CardsController#index as */*
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT "cards".* FROM "cards"[0m
+  ↳ app/controllers/cards_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 2449)
+
+
+Started POST "/comments" for ::1 at 2020-07-30 14:19:18 -0400
+Processing by CommentsController#create as JSON
+  Parameters: {"text"=>"ads", "user_id"=>"", "comment"=>{"user_id"=>"", "text"=>"ads"}}
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms | Allocations: 696)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: User must exist):
+  
+app/controllers/comments_controller.rb:14:in `create'
+Started DELETE "/users/undefined" for ::1 at 2020-07-30 14:19:18 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `destroy'
+Completed 404 Not Found in 4ms (ActiveRecord: 1.4ms | Allocations: 624)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
+  
+app/controllers/users_controller.rb:20:in `destroy'
+Started POST "/users" for ::1 at 2020-07-30 14:19:26 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"Brandon", "user"=>{"name"=>"Brandon"}}
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (25.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Brandon"], ["created_at", "2020-07-30 18:19:26.216875"], ["updated_at", "2020-07-30 18:19:26.216875"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 44ms (Views: 0.7ms | ActiveRecord: 32.0ms | Allocations: 2493)
+
+
+Started POST "/users" for ::1 at 2020-07-30 14:19:27 -0400
+Processing by UsersController#create as JSON
+  Parameters: {"name"=>"", "user"=>{"name"=>""}}
+  [1m[35m (7.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (25.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", ""], ["created_at", "2020-07-30 18:19:27.517294"], ["updated_at", "2020-07-30 18:19:27.517294"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 33.6ms | Allocations: 2493)
+
+
