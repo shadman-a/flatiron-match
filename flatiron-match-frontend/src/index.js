@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const ul = document.getElementById('user')
-    const userUl = document.createElement('ul')
-
+    
     function renderUser(data) {
         const userUl = document.createElement('ul')
+        userUl.className = 'uname'
         userUl.id = data.id
         userUl.innerHTML = `${data.name}
         <button class="delBtn" type="button">Delete</button>`
@@ -118,11 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     function deleteUser(id) {
+        const uname = document.getElementById(id)
         fetch(`${userurl}/${id}`, {method: "DELETE"})
-        userUl.remove() 
+        uname.remove() 
     }
 
-    function postComment(comment, userId) {
+    function postComment(text, userId) {
+        console.log(text)
         fetch(commenturl, {
             method: "POST",
             headers: {
@@ -131,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             
             body: JSON.stringify({
-               "text": comment,
+               "text": text,
                "user_id": userId
             })
         })
@@ -142,11 +144,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderComment(comment) {
         const commentCard = document.createElement('ul')
-        ul.className = 'commentCard'
-        ul.id = comment.id
-        ul.innerHTML = `${comment.text} 
-        <button id="delComBtn type="button">Delete</button>`
-        userComment.append(ul)
+        commentCard.className = 'commentCard'
+        commentCard.id = comment.id
+        commentCard.innerHTML = `${comment.text} 
+        <button class="delComBtn" type="button">Delete</button>`
+        userComment.append(commentCard)
     }
 
     function deleteComment(id) {
@@ -163,9 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
         postUser(username);
         form.reset()
         } else if (e.target.id === "comment-form") {
-            let comment = commentForm.comment.value
-            let userId = commentForm.parentElement.parentElement.children[0].children[2].children[0].id
-            postComment(comment, userId)
+            let text = commentForm.comment.value
+            let userId = commentForm.parentElement.parentElement.children[0].children[2].children[0].children[0].id
+            postComment(text, userId)
             commentForm.reset()
         }
     })
@@ -176,7 +178,9 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (e.target.className === 'delBtn'){
         let id = e.target.parentElement.id
         deleteUser(id)
-        }
+        } else if (e.target.className === 'delComBtn'){
+        let id = e.target.parentElement.id
+        deleteComment(id)}
     })
     
 })
