@@ -105,15 +105,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => renderUser(data))
     }
 
-    const ul = document.getElementById('user')
     
     function renderUser(data) {
-        const userUl = document.createElement('ul')
-        userUl.className = 'uname'
-        userUl.id = data.id
-        userUl.innerHTML = `${data.name}
-        <button class="delBtn" type="button">Delete</button>`
-        ul.append(userUl)
+        const userDiv = document.getElementsByName('show-user-name')[0]
+        userDiv.innerHTML = `
+        Welcome, ${data.name}! Enjoy the Game!
+        <button class="delBtn" type="button">Delete User</button>
+        `
+        // const userUl = document.createElement('ul')
+        userDiv.className = 'uname'
+        userDiv.id = data.id
+        // userUl.innerHTML = `${data.name}
+        // `
+        // ul.append(userUl)
     }
 
     
@@ -143,12 +147,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     function renderComment(comment) {
-        const commentCard = document.createElement('ul')
+        const commentCard = document.createElement('span')
         commentCard.className = 'commentCard'
         commentCard.id = comment.id
         commentCard.innerHTML = `${comment.text} 
         <button class="delComBtn" type="button">Delete</button>`
         userComment.append(commentCard)
+        // console.log(comment)
     }
 
     function deleteComment(id) {
@@ -162,12 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('submit', function(e) {
         e.preventDefault();
         if(e.target.id === "form"){
+            console.log(e.target)
         let username = form.username.value
         postUser(username);
         form.reset()
         } else if (e.target.id === "comment-form") {
             let text = commentForm.comment.value
-            let userId = commentForm.parentElement.parentElement.children[0].children[2].children[0].children[0].id
+            let userId = 1/*temporary due to change in HTML"*/
+            /*let userId = commentForm.parentElement.parentElement.children[0].children[2].children[0].children[0].id*/
             postComment(text, userId)
             commentForm.reset()
         }

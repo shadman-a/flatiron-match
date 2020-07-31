@@ -9,25 +9,35 @@
   display: flex;
   background: rgb(255, 255, 255);
 } */
-.item1 { grid-area: header; }
-.item2 { grid-area: left; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
 
+.item1 { grid-area: header; 
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-shadow: 2px 2px 5px lightskyblue;}
+
+.item2 { grid-area: main;
+}
+
+.item3 { grid-area: footer; 
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: solid;
+  border-color: gray;
+  
+}
+  
 .grid-container {
   display: grid;
   grid-template-areas:
-    'header header header header header header'
-    'left main main main main right';
-  grid-gap: 10px;
-  background-color: #2196F3;
+    'header'
+    'main'
+    'footer';
+  grid-gap: 5px;
   padding: 10px;
 }
 
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 30px;
 }
 
@@ -35,12 +45,37 @@
   display: flex;
   flex-wrap: nowrap;
   align-content: space-around;
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flex-container2 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  font-size: 15px;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 20px;
+}
+
+.comment-container {
+  font-size: 15px;
+  align-content: space-around;
+  padding: 20px;
+  text-align: center;
+}
+
+.commentCard {
+  align-content: space-around;
 }
 
 /*  */
+
 #memory-game {
-  width: 640px;
-  height: 640px;
+  width: 360px;
+  height: 480px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +84,7 @@
 
 .memory-card {
   width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  height: calc(25% - 10px);
   margin: 5px;
   position: relative;
   transform: scale(1);
@@ -71,7 +106,7 @@
 .back-face {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
   position: absolute;
   border-radius: 5px;
   background: #1C7CCC;
