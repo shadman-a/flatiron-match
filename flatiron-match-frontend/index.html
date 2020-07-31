@@ -5,36 +5,43 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      
-        <header>
-            <h2>Flatiron Match</h2>
-
+    <div class="grid-container">
+      <div class="item1"><h2>Flatiron Match</h2>
+        <div class="flex-container">
+          <div style="flex-grow: 1">
             <form id="form">
-              <label for="username"> Username:</label>
-              <input type="text" name="username">
+              <!-- <label for="username"> Username:</label> -->
+              <input type="text" name="username" placeholder="Enter a Username">
               <input type="submit" value="Submit">
             </form> 
-
+          </div>
+          <div style="flex-grow: 8">
             <div class="name">
-              <div id="user"></div>
+              <div name="show-user-name"></div>
             </div>
-        </header>
-
-    <section id="memory-game">
-    </section>
-
-    <div id="comments">
-      <form id="comment-form">
-        <label for="comment"> Please Enter Your Comment:</label>
-        <input type="text" name="comment">
-        <input type="submit" value="Submit">
-      </form> 
-      <br>
-      <br>
-    </div>
-
-    <div id="user-comment">
-
+          </div>
+          <div style="flex-grow: 1">
+            <div id="comments">
+              <form id="comment-form">
+                <!-- <label for="comment"> Please Enter Your Comment:</label> -->
+                <input type="text" name="comment" placeholder="Enter a Comment">
+                <input type="submit" value="Submit">
+              </form> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item2"></div>
+        <section id="memory-game">
+        </section>
+      </div>
+      <div class="item3">
+        <div class='comment-container'><p>User Comments:</p></div>
+        <div class="flex-container2">
+          
+          <div style="flex-grow: 8" id="user-comment"></div>
+        </div>
+      </div>
     </div>
 
       <script src="./src/index.js"></script>
