@@ -10,19 +10,15 @@
   background: rgb(255, 255, 255);
 } */
 .item1 { grid-area: header; }
-.item2 { grid-area: leftup; }
+.item2 { grid-area: left; }
 .item3 { grid-area: main; }
 .item4 { grid-area: right; }
-.item5 { grid-area: leftdown; }
-.item6 { grid-area: footer; }
 
 .grid-container {
   display: grid;
   grid-template-areas:
     'header header header header header header'
-    'leftup main main main main right'
-    'leftdown main main main main right'
-    'footer footer footer footer footer footer';
+    'left main main main main right';
   grid-gap: 10px;
   background-color: #2196F3;
   padding: 10px;
