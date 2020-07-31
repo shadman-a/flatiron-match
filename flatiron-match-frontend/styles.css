@@ -4,12 +4,44 @@
   box-sizing: border-box;
 }
 
-body {
+/* body {
   height: 100vh;
   display: flex;
   background: rgb(255, 255, 255);
+} */
+.item1 { grid-area: header; }
+.item2 { grid-area: leftup; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: leftdown; }
+.item6 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'leftup main main main main right'
+    'leftdown main main main main right'
+    'footer footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
 }
 
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: space-around;
+}
+
+/*  */
 #memory-game {
   width: 640px;
   height: 640px;
@@ -38,7 +70,6 @@ body {
 .memory-card.flip {
   transform: rotateY(180deg);
 }
-
 
 .front-face,
 .back-face {

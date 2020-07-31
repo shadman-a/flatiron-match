@@ -5,38 +5,44 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-      
-        <header>
-            <h2>Flatiron Match</h2>
-
+    <div class="grid-container">
+      <div class="item1"><h2>Flatiron Match</h2>
+        <div class="flex-container">
+          <div style="flex-grow: 1">
             <form id="form">
               <label for="username"> Username:</label>
               <input type="text" name="username">
               <input type="submit" value="Submit">
             </form> 
-
+          </div>
+          <div style="flex-grow: 8">
             <div class="name">
               <div id="user"></div>
             </div>
-        </header>
-
-    <section id="memory-game">
-    </section>
-
-    <div id="comments">
-      <form id="comment-form">
-        <label for="comment"> Please Enter Your Comment:</label>
-        <input type="text" name="comment">
-        <input type="submit" value="Submit">
-      </form> 
-      <br>
-      <br>
+          </div>
+          <div style="flex-grow: 1">
+            <div id="comments">
+              <form id="comment-form">
+                <label for="comment"> Please Enter Your Comment:</label>
+                <input type="text" name="comment">
+                <input type="submit" value="Submit">
+              </form> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item2"></div>
+      <div class="item3">
+        <section id="memory-game">
+        </section>
+      </div>  
+      <div class="item4">
+        <div id="user-comment">
+        </div>
+      </div>
+      <div class="item5"></div>
+      <div class="item6"></div>
     </div>
-
-    <div id="user-comment">
-
-    </div>
-
       <script src="./src/index.js"></script>
     </body>
   </html>
