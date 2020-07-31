@@ -3,7 +3,6 @@ const userurl = "http://localhost:3000/users"
 const commenturl = "http://localhost:3000/comments"
 const form = document.getElementById('form')
 const commentForm = document.getElementById('comment-form')
-
 const userComment = document.getElementById('user-comment')
 
 
@@ -13,6 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(url)
         .then(resp => resp.json())
         .then(data => data.forEach(cards => renderCards(cards)))
+    }
+
+    function fetchComments() {
+        fetch(commenturl)
+        .then(resp => resp.json())
+        .then(data => data.forEach(comment => renderComment(comment)))
+    }
+
+    function fetchUsers() {
+        fetch(userurl)
+        .then(resp => resp.json())
+        .then(data => data.forEach(data => renderUser(data)))
     }
 
     function renderCards(cards) {
@@ -48,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function checkForMatch() {
-        //console.log(firstCard.children[0].src)
         if (firstCard.children[0].src  === secondCard.children[0].src) {
             disableCards();
         return;
@@ -60,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function disableCards() {
         firstCard.removeEventListener('click', flipCard);
         secondCard.removeEventListener('click', flipCard);
+
         resetBoard();
     }
 
@@ -68,9 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             firstCard.classList.remove('flip');
             secondCard.classList.remove('flip');
+
             resetBoard();
         }, 1500);
     }
+
     //need to fix          
     function resetBoard() {
         [hasFlippedCard, lockBoard] = [false, false];
@@ -88,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     })();
 
     fetchCards()
+    fetchUsers()
+    fetchComments()
 
     function postUser(username) {
         fetch(userurl, {
@@ -128,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function postComment(text, userId) {
-        //console.log(text)
         fetch(commenturl, {
             method: "POST",
             headers: {
@@ -151,9 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
         commentCard.className = 'commentCard'
         commentCard.id = comment.id
         commentCard.innerHTML = `${comment.text} 
-        <button class="delComBtn" type="button">Delete</button>`
+        <button class="delComBtn" type="button">Delete</button><br><br>`
         userComment.append(commentCard)
-        // console.log(comment)
     }
 
     function deleteComment(id) {
@@ -173,8 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset()
         } else if (e.target.id === "comment-form") {
             let text = commentForm.comment.value
-            let userId = 1/*temporary due to change in HTML"*/
-            /*let userId = commentForm.parentElement.parentElement.children[0].children[2].children[0].children[0].id*/
+            let userId = commentForm.parentElement.parentElement.parentElement.children[1].children[0].children[0].id
             postComment(text, userId)
             commentForm.reset()
         }
@@ -182,13 +194,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 
     document.addEventListener('click', function(e) {
         if(e.target.className === 'back-face'){
-        flipCard(e.target.parentElement)
-        } else if (e.target.className === 'delBtn'){
-        let id = e.target.parentElement.id
-        deleteUser(id)
-        } else if (e.target.className === 'delComBtn'){
-        let id = e.target.parentElement.id
-        deleteComment(id)}
+            flipCard(e.target.parentElement)
+        } 
+        else if (e.target.className === 'delBtn'){
+            let id = e.target.parentElement.id
+            deleteUser(id)
+        } 
+        else if (e.target.className === 'delComBtn'){
+            let id = e.target.parentElement.id
+            deleteComment(id)
+        }
     })
     
 })

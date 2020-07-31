@@ -9,7 +9,7 @@
 Deck.create(name: 'flatiron')
 User.create(name: 'michael')
 
-Comment.create(comment: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam", user_id: User.all.sample.id)
+Comment.create(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam", user_id: User.all.sample.id)
 
 5.times do 
     Game.create(user_id: User.all.sample.id , deck_id: Deck.all.sample.id)
